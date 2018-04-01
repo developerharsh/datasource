@@ -6,7 +6,7 @@
 	
 	
 	
-	<bean id="ub" class="mypack.DemoBean">
+	<bean id="ab" class="mypack.DemoBean">
 		<property name="dataSource" ref="myDataSource"></property>
 	</bean>
 	

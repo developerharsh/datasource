@@ -4,6 +4,8 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.FileSystemResource;
 
 import java.sql.SQLException;
+import java.util.Iterator;
+import java.util.List;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -18,11 +20,15 @@ public class DemoClient
 		
 		ApplicationContext ac = new FileSystemXmlApplicationContext("Democfg.xml");
 		
-		Demo d=(Demo) ac.getBean("ub");
+		Demo d=(Demo) ac.getBean("ab");
 		
-		User user = new User();
-		user.setUserName("amit");
-		user.setUserPassword("xyz");
-		System.out.println(d.addData(user));
+		List<User> data = d.findAllData();
+		Iterator<User> it = data.iterator();
+		
+		while(it.hasNext())
+		{
+			User u= it.next();
+			System.out.println(u.getUserName()+" "+u.getUserPassword());
+		}
 	}
 }

@@ -9,5 +9,5 @@ public interface Demo
 	int modifyData(User user) throws SQLException;
 	int removeData(User user) throws SQLException;
 	User findData(User user) throws SQLException;
-	List<User> findAllData(User user) throws SQLException;
+	List<User> findAllData() throws SQLException;
 }
