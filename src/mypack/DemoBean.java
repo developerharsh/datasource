@@ -33,15 +33,27 @@ public class DemoBean implements Demo
 	}
 
 	@Override
-	public int modifyData(User user) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+	public int modifyData(User user) throws SQLException 
+	{
+		String pass="abc";
+		conn = dataSource.getConnection();
+		SQL = "update login set userpassword='abc' where username=?";
+		pst = conn.prepareStatement(SQL);
+		//pst.setString(1, pass);
+		pst.setString(1, user.getUserName());
+		
+		return pst.executeUpdate();
 	}
 
 	@Override
-	public int removeData(User user) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+	public int removeData(User user) throws SQLException 
+	{
+		conn = dataSource.getConnection();
+		SQL = "delete from login where username=?";
+		pst = conn.prepareStatement(SQL);
+		pst.setString(1, user.getUserName());
+		
+		return pst.executeUpdate();
 	}
 
 	@Override

@@ -13,7 +13,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;;
 
 
-public class DemoClient 
+public class DemoClient_disAllData 
 {
 	public static void main(String args[]) throws SQLException
 	{
